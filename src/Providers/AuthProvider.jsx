@@ -11,6 +11,7 @@ import {
   GoogleAuthProvider,
   signInWithPopup,
   GithubAuthProvider,
+  updateProfile,
 } from "firebase/auth";
 import { useState } from "react";
 import { useEffect } from "react";
@@ -24,6 +25,12 @@ const AuthProvider = ({ children }) => {
   const [user, setUser] = useState({});
   const googleProvider = new GoogleAuthProvider();
   const githubProvider= new GithubAuthProvider();
+//   const updateUserProfile=(name,photoUrl)=>{
+//     return updateProfile(auth.currentUser,{
+//         displayName:name,
+//         photoURL:photoUrl
+//     })
+// }
 
   const googleUser=()=>{
     return signInWithPopup(auth,googleProvider)

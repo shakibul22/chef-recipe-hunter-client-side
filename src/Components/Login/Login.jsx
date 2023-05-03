@@ -1,17 +1,20 @@
-import React, { useContext, useState } from 'react';
+import React, { useContext, useRef, useState } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../Providers/AuthProvider';
+// import { toast } from 'react-hot-toast';
 import toast, { Toaster } from 'react-hot-toast';
 import "./Login.css";
+import { updateProfile } from 'firebase/auth';
+// import { sendPasswordResetEmail } from 'firebase/auth';
 
 
 const Login = () => {
-    const { user, loginUser, googleUser ,githubUser} = useContext(AuthContext);
+    const {auth, user, loginUser, googleUser ,githubUser} = useContext(AuthContext);
     const [error, setError] = useState('')
     const navigate = useNavigate();
-    const location = useLocation()
+    const location = useLocation();
     const from = location.state?.from;
-    console.log(location, from)
+    console.log(location, from);
 
     const handleGoogle=()=>{
        googleUser()
@@ -65,6 +68,8 @@ const Login = () => {
             })
 
     }
+
+   
     return (
         <form onSubmit={handleLogin} className="w-full md:w-[570px] mt-15 mb-10 p-10  bg-white rounded-lg text-black">
             <h3 className='text-2xl font-bold mb-5'>Login</h3>
@@ -73,15 +78,16 @@ const Login = () => {
                     <span className="label-text">Email</span>
                 </label>
                <Toaster></Toaster>
-                <input type="email" name='email' placeholder="email" className="input input-bordered" required />
+                <input type="email" name='email'  placeholder="email" className="input input-bordered" required />
             </div>
+           
             <div className="form-control">
                 <label className="label">
                     <span className="label-text">Password</span>
                 </label>
                 <input type="password" name='password' placeholder="password" className="input input-bordered" required />
                 <label className="label">
-                    <a href='#' className="underline text-error">Forgot password?</a>
+                    <a href='#' className="underline text-error" >Forgot password?</a>
                 </label>
             </div>
             <div className="form-control">

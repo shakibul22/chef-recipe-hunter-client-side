@@ -4,13 +4,14 @@
 import { createBrowserRouter } from "react-router-dom";
 import LoginLayout from "../Layouts/LoginLayout/LoginLayout";
 import Register from "../Register/Register";
-import DetailsLayout from "../Layouts/DetailsLayout/DetailsLayout";
 import Login from "../Login/Login";
 import PrivateRoute from "./PrivateRoute";
 import Details from "../Details/Details";
 import Home from "../Home/Home";
 import Blog from "../Blog/Blog";
 import ErrorPage from "../ErrorPage/ErrorPage";
+import RecipeDetailsLayout from "../Layouts/RecipeDetailsLayout/RecipeDetailsLayout";
+import ChefRecipe from "../ChefRecipe/ChefRecipe";
 
 
 const router = createBrowserRouter([
@@ -39,18 +40,18 @@ const router = createBrowserRouter([
     },
 
     {
-        path: "Details",
-        element: <DetailsLayout></DetailsLayout>,
+        path: "chefrecipes",
+        element: <RecipeDetailsLayout></RecipeDetailsLayout>,
         children: [
             {
-                path: "/Details",
-                element: <Details></Details>,
+                path: "/chefrecipes",
+                element: <ChefRecipe></ChefRecipe>,
             },
             {
                 path: ":id",
                 element: (
                     <PrivateRoute>
-                        <DetailsLayout></DetailsLayout>
+                        <Details></Details>
                     </PrivateRoute>
                 ),
             },

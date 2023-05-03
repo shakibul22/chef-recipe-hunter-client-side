@@ -1,0 +1,35 @@
+.carousel::-webkit-scrollbar {
+    display: none;
+  }
+  
+  .slide {
+    scroll-snap-align: start;
+  }
+  
+  .slide img {
+    height: 300px;
+    object-fit: cover;
+  }
+  
+  .slide-caption {
+    display: none;
+  }
+  
+  .slide:hover .slide-caption {
+    display: block;
+  }
+  
+  .prev-button,
+  .next-button {
+    font-size: 1.2rem;
+  }
+  
+  .prev-button {
+    left: 0;
+  }
+  
+  .next-button {
+    right: 0;
+  }
+  
+  

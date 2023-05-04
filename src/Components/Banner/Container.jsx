@@ -8,7 +8,7 @@ const Container = () => {
                 <div className="hero-content text-center text-neutral-content">
                     <div className="max-w-md">
                         <h1 className="mb-5 text-5xl font-bold">Welcome to Our FoodLee</h1>
-                        <p className="mb-5">To provide essentials for families of at-risk communities during national emergencies and to improve nutritional standards for the people of Bangladesh.</p>
+                        <p className="mb-5">To provide essentials for families of at-risk communities during national emergencies and to improve nutritional standards for the people of Japan.</p>
 
                     </div>
                 </div>

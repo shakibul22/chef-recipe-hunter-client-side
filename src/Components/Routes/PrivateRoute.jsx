@@ -6,13 +6,22 @@ import { AuthContext } from "../../Providers/AuthProvider";
 
 
 const PrivateRoute = ({ children }) => {
-  const { user } = useContext(AuthContext);
-  const location = useLocation();
-  if (user) {
-    return children;
-  }
 
-  return <Navigate to="/login" replace></Navigate>;
-};
+    const { user, loading } = useContext(AuthContext);
+  
+    if (loading) {
+      return <>loading................. </>;
+    }
+    const location = useLocation();
+  
+    if (user) {
+      return children;
+    }
+    return (
+      <Navigate to={"/login"} state={{ form: location }} replace>
+        {" "}
+      </Navigate>
+    );
+  };
 
 export default PrivateRoute;

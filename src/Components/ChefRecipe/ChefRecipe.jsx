@@ -1,9 +1,10 @@
 import React, { useState } from 'react';
 import { useEffect } from 'react';
 import {  AcademicCapIcon, HandThumbUpIcon, ShoppingCartIcon } from '@heroicons/react/24/solid'
+import { Link } from 'react-router-dom';
 
 const ChefRecipe = ({recipeData}) => {
- const {name,description,experience,picture,id,likes}=recipeData;
+ const {id,name,description,experience,picture,likes}=recipeData;
   
     return (
         <div>
@@ -17,12 +18,21 @@ const ChefRecipe = ({recipeData}) => {
                             <p ><AcademicCapIcon className="h-6 w-6 text-blue-500" />{experience}</p>
                            
                         </div>
-                        <div className="card-actions justify-start">
-                            <button className="btn btn-warning">view Details</button>
-                        </div>
+                        <Link to={`/recipeData/${recipeData?.id}`}>
+              <button>Details</button>
+            </Link>
                     </div>
                 </div>
-            {/* <h1>Our Services</h1>
+     
+        </div>
+    );
+};
+
+export default ChefRecipe;
+
+
+
+       {/* <h1>Our Services</h1>
       <div className="services">
         {servicesData[0]?.services?.map((service) => (
           <div key={service?.id} className="service-card">
@@ -43,8 +53,3 @@ const ChefRecipe = ({recipeData}) => {
           </div>
         ))}
       </div> */}
-        </div>
-    );
-};
-
-export default ChefRecipe;

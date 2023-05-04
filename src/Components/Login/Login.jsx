@@ -4,22 +4,21 @@ import { AuthContext } from '../../Providers/AuthProvider';
 // import { toast } from 'react-hot-toast';
 import toast, { Toaster } from 'react-hot-toast';
 import "./Login.css";
-import { updateProfile } from 'firebase/auth';
 // import { sendPasswordResetEmail } from 'firebase/auth';
 
 
 const Login = () => {
-    const {auth, user, loginUser, googleUser ,githubUser} = useContext(AuthContext);
+    const { user, loginUser, googleUser ,githubUser} = useContext(AuthContext);
     const [error, setError] = useState('')
     const navigate = useNavigate();
-    const location = useLocation();
-    const from = location.state?.from;
-    console.log(location, from);
+  const location = useLocation();
+  let from = location.state?.from?.pathname || "/";
 
     const handleGoogle=()=>{
        googleUser()
        .then(result=>{
         const googleUsed=result.user;
+        navigate(from, { replace: true });
         console.log(googleUsed);
        })
        .catch(error => {
@@ -30,6 +29,7 @@ const Login = () => {
        githubUser()
        .then(result=>{
         const githubUsed=result.user;
+        navigate(from, { replace: true });
         console.log(githubUsed);
        })
        .catch(error => {
@@ -53,14 +53,7 @@ const Login = () => {
                 form.reset();
                 toast.success('Successfully Login!')
 
-                setTimeout(() => {
-                    if (from) {
-                        navigate(from)
-                    }
-                    else {
-                        navigate('/')
-                    }
-                }, 2000)
+                navigate(from, { replace: true });
             })
             .catch(error => {
                 setError(error.message)
@@ -71,7 +64,8 @@ const Login = () => {
 
    
     return (
-        <form onSubmit={handleLogin} className="w-full md:w-[570px] mt-15 mb-10 p-10  bg-white rounded-lg text-black">
+       <div className='flex flex-col md:flex-row sm:flex-col justify-content-center align-items-center'>
+         <form onSubmit={handleLogin} className="w-full md:w-[570px] mt-15 mb-10 p-10  bg-white rounded-lg text-black">
             <h3 className='text-2xl font-bold mb-5'>Login</h3>
             <div className="form-control">
                 <label  className="label">
@@ -119,7 +113,16 @@ const Login = () => {
                     />
                 </div>
             </div>
+        
         </form>
+         <div className="col-md-6">
+         <img
+           className="w-100"
+           src="https://img.freepik.com/free-vector/mobile-login-concept-illustration_114360-83.jpg?w=826&t=st=1683184761~exp=1683185361~hmac=7b3ae2dbd8fdb1dc4ff88c5ff252efb77eb096c83292d5f05ed2090e8e0c86dd"
+           alt=""
+         />
+       </div>
+       </div>
     );
 };
 

@@ -1,8 +1,12 @@
 import React, { useState } from 'react';
+import Container from './Container';
 
 const Banner = () => {
 
     return (
+       <div className='p-4'>
+     <Container></Container>
+
     <div className="carousel w-full h-96 ">
 
         <div id="slide1" className="carousel-item relative w-full">
@@ -27,7 +31,10 @@ const Banner = () => {
                 <a href="#slide1" className="btn btn-circle"></a>
             </div>
         </div>
+        
     </div>
+       </div>
+    
 
 
 

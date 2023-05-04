@@ -40,11 +40,11 @@ const router = createBrowserRouter([
     },
 
     {
-        path: "chefrecipes",
+        path: "recipeData",
         element: <RecipeDetailsLayout></RecipeDetailsLayout>,
         children: [
             {
-                path: "/chefrecipes",
+                path: "/recipeData",
                 element: <ChefRecipe></ChefRecipe>,
             },
             {

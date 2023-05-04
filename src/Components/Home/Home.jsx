@@ -3,6 +3,7 @@ import "./Home.css";
 import { AuthContext } from '../../Providers/AuthProvider';
 import Banner from '../Banner/Banner';
 import ChefRecipe from '../ChefRecipe/ChefRecipe';
+import AppLink from './AppLink';
 
 const Home = () => {
     const user = useContext(AuthContext);
@@ -23,6 +24,7 @@ const Home = () => {
                     recipeDatas.map(recipeData => <ChefRecipe recipeData={recipeData} key={recipeData.id}></ChefRecipe>)
                 }
             </div>
+            <AppLink></AppLink>
         </div>
     );
 };

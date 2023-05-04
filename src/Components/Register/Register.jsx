@@ -2,8 +2,6 @@ import React, { useContext, useState } from 'react';
 import { Link, Navigate, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../Providers/AuthProvider';
 import "./Register.css"
-import { createUserWithEmailAndPassword } from 'firebase/auth';
-import { toast } from 'react-hot-toast';
 const Register = () => {
   const { user, createUser, googleUser, githubUser, updateUserProfile } = useContext(AuthContext);
   const [email, setEmail] = useState("");

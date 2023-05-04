@@ -4,7 +4,7 @@ import Container from './Container';
 const Banner = () => {
 
     return (
-       <div className='p-4'>
+       <div className=''>
      <Container></Container>
 
     <div className="carousel w-full h-96 ">

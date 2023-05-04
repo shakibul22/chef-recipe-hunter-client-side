@@ -19,22 +19,18 @@ const Details = () => {
   }
   return (
    <div>
-     <div className='my-15 p-5 flex justify-center '>
-
-<div className="card w-96 bg-base-100 shadow-xl">
-  <figure className="px-10 pt-10">
-    <img src={item.picture} alt="Shoes" className="rounded-xl" />
-  </figure>
-  <div className="card-body items-center text-center">
-    <h2 className="card-title">{item.name}</h2>
+<div className="card lg:card-side bg-base-100 shadow-xl p-3">
+  <figure><img src={item.picture} alt="Album"/></figure>
+  <div className="card-body">
+  <h2 className="card-title">{item.name}</h2>
     <h5 className=''>{item.description}</h5>
           <h5>Experience: {item.experience} years</h5>
           <h5>Like: {item.likes}</h5>
   </div>
 </div>
-      
 
-    </div>
+ <div className='text-center '><h2 className='text-4xl mb-12 mx-auto items-center font-extrabold text-orange-300 my-5'>Recipes Features</h2></div>
+   
       <div className='grid grid-cols-1  p-10 md:grid-cols-3  justify-center gap-5 mb-4'>
       {
      

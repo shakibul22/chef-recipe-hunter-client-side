@@ -14,7 +14,6 @@ const Home = () => {
             .then((data) => setRecipeDatas(data));
     }, []);
 
-    console.log(recipeDatas);
     return (
         <div className='home '>
             <Banner></Banner>

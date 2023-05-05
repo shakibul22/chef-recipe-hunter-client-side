@@ -67,7 +67,7 @@ const Register = () => {
   return (
 
 
-  <div className='flex flex-col md:flex-row sm:flex-col justify-content-center align-items-center'>
+  <div className='flex flex-col md:flex-row sm:flex-col justify-content-center align-items-center '>
       <form onSubmit={handleCreateUser} className="w-full md:w-[570px] mt-15 mb-10 p-10  bg-white rounded-lg text-black">
       <h3 className='text-2xl font-bold mb-5'>Create an account</h3>
       <div className="form-control">
@@ -111,9 +111,9 @@ const Register = () => {
       </div>
       {error && <p className='text-center text-error mb-2'>{error}</p>}
       <p className='text-center'>Already have an account? <Link to='/login' className='text-warning underline'>Login</Link></p>
-      <p>_____________or_______________</p>
-      <div className=" social-button-container w-50 mt-3">
+      <div className=" social-button-container grid grid-rows-2 justify-items-center w-50 mt-3">
         <div onClick={handleGoogle} className="">
+      <p>_____________or_______________</p>
           <img
 
             className=" social-button"

@@ -16,7 +16,7 @@ const Header = () => {
         <div className="navbar bg-cyan-100 shadow-lg p-3">
             <div className="flex-1">
                 <div className="avatar placeholder">
-                    <div className="bg-neutral-focus text-neutral-content rounded-full w-20">
+                    <div className="bg-neutral-focus text-neutral-content rounded-full w-14 ">
                         <span className="text-3xl">F</span>
                     </div>
                 </div>

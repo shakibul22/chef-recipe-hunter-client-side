@@ -1,11 +1,14 @@
 import React, { useState } from 'react';
-import Container from './Container';
+import  { Suspense, lazy } from 'react';
+const LazyImage = lazy(() => import('./Container'));
 
 const Banner = () => {
 
     return (
        <div className=''>
-     <Container></Container>
+     <Suspense fallback={<div>Loading...</div>}>
+        <LazyImage />
+      </Suspense>
 
     <div className="carousel w-full h-96 ">
 
@@ -34,17 +37,10 @@ const Banner = () => {
         
     </div>
        </div>
-    
-
-
-
-
-
-
+ 
     );
 };
 export default Banner;
 
 
 
-{/*  */ }

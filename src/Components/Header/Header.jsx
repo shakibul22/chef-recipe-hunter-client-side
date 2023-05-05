@@ -1,5 +1,5 @@
 import React, { useContext } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 import { AuthContext } from '../../Providers/AuthProvider';
 import { Input } from 'postcss';
 
@@ -33,8 +33,8 @@ const Header = () => {
             </div>
             <div className="flex-none">
                 <ul className="menu menu-horizontal px-1">
-                    <li>  <Link to="/">Home</Link></li>
-                    <li> <Link to="/blog">Blog</Link></li>
+                    <li>  <NavLink to="/" >Home</NavLink></li>
+                    <li> <NavLink to="/blog" >Blog</NavLink></li>
                     {user ?
                         <div className="dropdown dropdown-end">
                             <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
@@ -46,7 +46,7 @@ const Header = () => {
                                 <li><a>{user.displayName}</a></li>
                                 <li><a onClick={handleLogout}>Logout</a></li>
                             </ul>
-                        </div> : <li> <Link to="/login">Login</Link></li>}
+                        </div> : <li> <Link to="/login" >Login</Link></li>}
                 </ul>
 
             </div>

@@ -24,6 +24,7 @@ const Blog = () => {
     onBeforeGetContent: () => {
       window.document.getElementsByTagName('body')[0].style.overflow = 'auto';
     },
+   
     onAfterPrint: () => {
       window.document.getElementsByTagName('body')[0].style.overflow = 'initial';
     },

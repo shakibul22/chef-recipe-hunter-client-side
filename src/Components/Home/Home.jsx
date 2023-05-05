@@ -15,7 +15,7 @@ const Home = () => {
     useEffect(() => {
         setLoading(true); // set loading state to true before fetching data
         setTimeout(() => {
-            fetch("http://localhost:5000/chef")
+            fetch("https://chef-recipe-hunter-server-side-shakibul22.vercel.app/chef")
                 .then((response) => response.json())
                 .then((data) => {
                     setRecipeDatas(data);

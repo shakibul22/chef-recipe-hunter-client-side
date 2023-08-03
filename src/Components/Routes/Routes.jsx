@@ -1,6 +1,5 @@
 /* eslint-disable no-unused-vars */
 // eslint-disable-next-line no-unused-vars
-
 import { createBrowserRouter } from "react-router-dom";
 import LoginLayout from "../Layouts/LoginLayout/LoginLayout";
 import Register from "../Register/Register";

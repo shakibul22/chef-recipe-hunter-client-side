@@ -1,4 +1,5 @@
 import React from 'react';
+import "./Container.css"
 
 const Container = () => {
     return (
@@ -7,7 +8,12 @@ const Container = () => {
                 <div className="hero-overlay bg-opacity-60"></div>
                 <div className="hero-content text-center text-neutral-content">
                     <div className="max-w-md">
-                        <h1 className="mb-5 text-5xl font-bold">Welcome to Our FoodLee</h1>
+                        <h1 className="mb-5 text-5xl font-bold slide-in" style={{ color: '#fff', position: 'relative' }}>
+                            Welcome to Our FoodLee
+                            <span className="bubble rounded-xl  ring ">
+                              
+                            </span>
+                        </h1>
                         <p className="mb-5">To provide essentials for families of at-risk communities during national emergencies and to improve nutritional standards for the people of Japan.</p>
 
                     </div>

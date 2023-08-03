@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import "./Recipes.css"
 
 const Recipes = ({ recipe }) => {
     const { recipeName, cookingMethod, img, ratings, ingredients, price } = recipe;
@@ -15,7 +16,7 @@ const Recipes = ({ recipe }) => {
     return (
         <div>
 
-            <div className="w-full max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
+        <div className="card p-2 mb-3 w-full max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
                 <a href="#">
                     <img className="p-8 rounded-t-lg" src={img} alt="product image" />
                 </a>
@@ -41,7 +42,7 @@ const Recipes = ({ recipe }) => {
                         </button>
                         <ToastContainer />
                     </div>
-                    <div className='m'>
+                    <div className='mb6'>
                         <hr />
                         <h2 className='py-5'> <span className='text-2xl font-bold text-orange-400 '>Ingredients:</span></h2>
                         <h4>1. {ingredients[0]}</h4><br />

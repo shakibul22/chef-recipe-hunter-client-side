@@ -29,14 +29,12 @@ const Register = () => {
         console.log(user);
         updateUserProfile(name, photo);
         navigate(from, { replace: true });
-
         form.reset();
 
       })
       .catch((error) => {
         const errorMessage = error.message;
-        console.log(errorMessage);
-        // ..
+        console.log(errorMessage)
       });
   };
 
@@ -75,7 +73,7 @@ const Register = () => {
         <label className="label">
           <span className="label-text">Name</span>
         </label>
-        <input onChange={(e) => setName(e.target.value)} type="text" name='name' placeholder="Name" className="input input-bordered w-full" required />
+        <input  type="text" name='name' placeholder="Name" className="input input-bordered w-full" required />
       </div>
       <div className="form-control">
         <label className="label">

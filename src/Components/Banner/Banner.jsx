@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import  { Suspense, lazy } from 'react';
-const LazyImage = lazy(() => import('./Container'));
+const LazyImage = lazy(() => import('../Container/Container'));
 
 const Banner = () => {
 

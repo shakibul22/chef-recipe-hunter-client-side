@@ -3,9 +3,7 @@ import React from 'react';
 const Review = () => {
     return (
         <div>
-            
-           
-            <div className='text-center '><h2 className='text-2xl mb-3 mx-auto items-center font-bold text-blue-500 my-5'>Our Previous Review</h2>
+            <div className='text-center'><h2 className='text-2xl mb-3 mx-auto items-center font-bold text-blue-500 my-5'>Our Previous Review</h2>
             <div className="rating mx-auto items-center">
                 <input type="radio" name="rating-4" className="mask mask-star-2 bg-green-500" />
                 <input type="radio" name="rating-4" className="mask mask-star-2 bg-green-500" checked />
@@ -14,7 +12,7 @@ const Review = () => {
                 <input type="radio" name="rating-4" className="mask mask-star-2 bg-green-500" />
             </div>
             </div>
-            <div className='flex flex-row p-3'>
+            <div className='flex flex-col md:flex-row px-2 gap-2'>
                 <div className="bg-white p-6 rounded-lg shadow-lg">
                     <div className="flex items-center">
                         <img
